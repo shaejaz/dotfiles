@@ -1,3 +1,11 @@
-- clean: []
-- link: {}
+- clean: ['~']
+- link:
+    ~/.config/nvim: nvim
+    ~/.config/qtile: qtile
+    ~/.config/fish: fish
+    ~/.config/rofi: rofi
+    ~/.config/kitty: kitty
+    ~/.config/dunst: dunst
+    ~/.config/picom.conf: picom/picom.conf
+    ~/.bashrc: bash/bashrc
 - shell: []
