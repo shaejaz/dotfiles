@@ -5,11 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
-then
-    exec fish
-fi
-
 [[ -f ~/.welcome_screen ]] && . ~/.welcome_screen
 
 _set_liveuser_PS1() {
@@ -91,4 +86,5 @@ _open_files_for_editing() {
 ################################################################################
 
 
-source /home/shahmir/.config/broot/launcher/bash/br
+source "$HOME/.config/broot/launcher/bash/br"
+. "$HOME/.cargo/env"
