@@ -2,6 +2,7 @@
 - link:
     ~/.config/nvim: nvim
     ~/.config/qtile: qtile
+    ~/.config/awesome: awesome
     ~/.config/fish: fish
     ~/.config/rofi: rofi
     ~/.config/kitty: kitty
