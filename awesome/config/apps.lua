@@ -1,6 +1,6 @@
 local module = {
-    terminal = os.getenv('TERMINAL') or 'xterm',
-    editor   = os.getenv('EDITOR') or 'nano',
+    terminal = 'kitty',
+    editor   = 'nvim',
 }
 
 module.editor_cmd = module.terminal .. ' -e ' .. module.editor
