@@ -1,0 +1,9 @@
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
+(defwidget wifi []
+  (box		:orientation "v"
+    :tooltip wifi-name
+    (button		:onclick "scripts/popup wifi"
+      :class "wifi-icon"
+      (image :path "./assets/wifi-1.svg" :image-width "28" :image-height "28"))))

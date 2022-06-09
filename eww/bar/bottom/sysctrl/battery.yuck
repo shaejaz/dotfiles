@@ -1,0 +1,7 @@
+(defpoll battery			:interval "1s"	"scripts/battery icon")
+(defpoll battery-cappacity	:interval "1s"	"scripts/battery percent")
+
+(defwidget bat []
+  (box	:orientation "v"
+    :space-evenly "false"
+    (image :path "./assets/battery-0.svg" :image-width "28" :image-height "28")))

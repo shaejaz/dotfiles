@@ -1,0 +1,13 @@
+(include "./bar/bottom/sysctrl/battery.yuck")
+(include "./bar/bottom/sysctrl/brightness.yuck")
+(include "./bar/bottom/sysctrl/volume.yuck")
+(include "./bar/bottom/sysctrl/wifi.yuck")
+
+(defwidget control []
+  (box :orientation "v"
+    :space-evenly false
+    :class "control"
+    (bat)
+    (wifi)
+    (bright)
+    (volume)))

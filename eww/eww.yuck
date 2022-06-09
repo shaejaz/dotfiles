@@ -1,0 +1,14 @@
+(include "./bar/_base.yuck")
+
+(defwindow bar
+  :geometry (geometry :x 0 :y 0 :width "50px" :height "100%")
+  :anchor "top left"
+  :reserve (struts :distance "50px" :side "left")
+  (bar))
+
+(defwindow calendar
+  :geometry (geometry :x "70px"
+    :y "65%"
+    :width "270px"
+  :height "60px")
+  (cal))

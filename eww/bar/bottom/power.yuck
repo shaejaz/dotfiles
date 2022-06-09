@@ -1,0 +1,39 @@
+(defvar power false)
+
+(defwidget power []
+  (eventbox	:onhover "eww update power=true"
+    :onhoverlost "eww update power=false"
+    (box		:orientation "v"
+      :space-evenly "false"
+      :vexpand "false"
+      :class "powermenu"
+      (revealer	:transition "slideup"
+        :reveal power
+        :duration "550ms"
+        (box		:orientation "v"
+          :space-evenly "false"
+          
+          (button   	:class "button-bspres"
+            :tooltip "BSPWM Restart"
+            :onclick "bspc wm -r"
+            (image :path "./assets/wifi-1.svg" :image-width "28" :image-height "28")
+          )
+          
+          (button		:class "button-reb"
+            :tooltip "Reboot"
+            :onclick "reboot"
+            (image :path "./assets/wifi-2.svg" :image-width "28" :image-height "28"))
+          
+          (button		:class "button-quit"
+            :tooltip "Logout"
+            :onclick "killall bspwm"
+            (image :path "./assets/wifi-3.svg" :image-width "28" :image-height "28"))
+          
+          (button		:class "button-lock"
+            :tooltip "Lock Screen"
+            :onclick "betterlockscreen -l"
+            (image :path "./assets/wifi-4.svg" :image-width "28" :image-height "28"))))
+      
+      (button		:class "button-off"
+        :tooltip "Shutdown"
+        (image :path "./assets/power.svg" :image-width "28" :image-height "28")))))

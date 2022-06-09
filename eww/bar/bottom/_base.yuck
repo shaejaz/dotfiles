@@ -1,0 +1,17 @@
+(include "./bar/bottom/sysctrl/_base.yuck")
+(include "./bar/bottom/clock.yuck")
+(include "./bar/bottom/power.yuck")
+
+(defwidget bottom []
+  (box	:orientation "v"
+    :space-evenly false
+    (time)
+    (power)))
+
+(defwidget end []
+  (box :orientation "v"
+    :space-evenly "false"
+    :valign "end"
+    :spacing 5
+    (control)
+    (bottom)))

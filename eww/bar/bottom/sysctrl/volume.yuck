@@ -1,0 +1,22 @@
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volume false)
+
+(defwidget volume []
+  (eventbox :onhover "eww update volume=true"
+    :onhoverlost "eww update volume=false"
+    (box      :orientation "v"
+      :space-evenly "false"
+      :spacing "2"
+      (revealer :transition "slideup"
+        :reveal volume
+        :duration "550ms"
+        (scale    :class "volbar"
+          :value current-volume
+          :orientation "v"
+          :flipped true
+          :tooltip "Volume: ${current-volume}%"
+          :max 101
+          :min 0
+        :onchange "amixer -D pulse sset Master {}%" ))
+      (button   :onclick "scripts/popup audio"   :class "volume-icon"
+        (image :path "./assets/volume-1.svg" :image-width "28" :image-height "28")))))
